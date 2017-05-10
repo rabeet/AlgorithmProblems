@@ -52,10 +52,4 @@ public class AddTwoNumbers {
 	
 }
 
-class ListNode {
-	ListNode next;
-	int val;
-	ListNode(int a) {
-		this.val = a;
-	}
-}
+//class ListNode {}

@@ -1,6 +1,12 @@
+import java.util.Arrays;
 import java.util.HashMap;
 
 public class Prob169_MajorityElement {
+	
+	public static void main(String... args) {
+		Prob169_MajorityElement prob = new Prob169_MajorityElement();
+		System.out.println((prob.majorityElementVoting(new int[]{1,13,1,13,2,5,7,7,7,11,13,13})));
+	}
 	
 	public int majorityElement(int[] nums) {
 		int ans = -1;
@@ -37,6 +43,7 @@ public class Prob169_MajorityElement {
 					count--;
 			}
 		}
+		System.out.println(count);
 		return major;
 	}
 }

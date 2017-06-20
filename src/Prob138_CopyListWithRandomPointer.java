@@ -5,6 +5,7 @@ public class Prob138_CopyListWithRandomPointer {
 
 	public static void main(String[] args) {
 		
+		
 		RandomListNode node1 = new RandomListNode(1);
 		
 		Prob138_CopyListWithRandomPointer prob = new Prob138_CopyListWithRandomPointer();

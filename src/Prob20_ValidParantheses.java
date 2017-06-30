@@ -1,3 +1,5 @@
+import java.util.Stack;
+
 public class Prob20_ValidParantheses {
     public boolean isValid(String s) {
         // this fails for ({()}[])

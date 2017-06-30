@@ -42,7 +42,7 @@ public class Prob20_ValidParantheses {
     }
 }
 /*
-"(]" -> false
+"(]" -> fals
 
 "([]][]{})" -> false
 

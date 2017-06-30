@@ -3,8 +3,13 @@ import java.util.PriorityQueue;
 public class Prob378_KthSmallestElement {
 
 	public static void main(String[] args) {
-		int[][] matrix = {{1,5,9},{10,11,13},{12,13,15}};
+		int[][] matrix = {
+						{1,5,9},
+						{10,11,13},
+						{12,13,15}
+						};
 		System.out.println(kthSmallest(matrix, 8));
+		System.out.println(kthSmallestEfficient(matrix, 8));
 	}
 
 	public static int kthSmallest(int[][] matrix, int k) {
@@ -23,6 +28,26 @@ public class Prob378_KthSmallestElement {
 		}
 		
 		return ans;
+	}
+	
+	// Above code is inefficient since every the time complexity of it is N*M + Klog(K)
+	// We can make it to be KlogK efficient
+	
+	// By first inserting the first row in the PQ and then making sure that every time we poll we insert the next smallest element in the heap
+	// Having done that k-1 times will result in the heap to have its head pointed to the kth smallest element
+	public static int kthSmallestEfficient(int[][] matrix, int k) {
+		
+		PriorityQueue<Data> pq = new PriorityQueue<>((a,b) -> a.val - b.val);
+		
+		for (int i = 0; i < matrix[0].length; i++) {
+			pq.offer(new Data(0,i,matrix[0][i]));
+		}
+		for (int i = 0; i < k-1; i++) {
+			Data d = pq.poll();
+			if (d.row+1 == matrix.length) continue;
+			pq.offer(new Data(d.row+1,d.col, matrix[d.row+1][d.col]));
+		}
+		return pq.poll().val;
 	}
 
 	private static int[] parseMatrix(int[][] matrix) {
@@ -54,4 +79,20 @@ public class Prob378_KthSmallestElement {
 		
 		return arr;
 	}
+}
+
+class Data implements Comparable<Data>{
+	int row, col, val;
+	
+	public Data (int x, int y, int z) {
+		row = x;
+		col = y;
+		val = z;
+	}
+
+	@Override
+	public int compareTo(Data o) {
+		return this.val - o.val;
+	}
+
 }

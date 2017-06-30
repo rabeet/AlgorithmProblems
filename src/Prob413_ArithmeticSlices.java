@@ -34,14 +34,8 @@ public class Prob413_ArithmeticSlices {
     }
 
 	private static int countSlices(int start, int end) {
-		int lim = end-start;
-		if (lim < 2) return 0;
-		if (lim == 2) return 1;
-		int count = 1;
-		for (int i =2; i < lim; i++) {
-			count = count + i;
-		}
-		return count;
+		int n = end-start;
+		return (n-1)*(n-2)/2;
 	}
 	
 

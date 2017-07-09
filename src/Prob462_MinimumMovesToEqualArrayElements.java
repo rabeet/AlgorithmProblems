@@ -11,10 +11,10 @@ public class Prob462_MinimumMovesToEqualArrayElements {
 		
 		Arrays.sort(nums);
 		
-		int max = nums[nums.length-1];
+		int mid = nums[nums.length/2];
 		int minmoves = 0;
-		for (int i = 0; i < nums.length-1; i++) {
-			minmoves += max-nums[i];
+		for (int i = 0; i < nums.length; i++) {
+			minmoves += Math.abs(mid-nums[i]);
 		}
 		
 		return minmoves;

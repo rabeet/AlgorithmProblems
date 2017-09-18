@@ -11,7 +11,7 @@ public class Prob125_ValidPalindrome {
 			return true;
 		s = s.toLowerCase();
 		s = s.replaceAll("[^a-z*0-9]", "");
-		System.out.println(s);
+//		System.out.println(s);
 		return new StringBuilder(s).reverse().toString().equals(s);
 	}
 	

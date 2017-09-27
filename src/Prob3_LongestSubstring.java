@@ -1,10 +1,28 @@
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 public class Prob3_LongestSubstring {
 
 	public static void main(String[] args) {
 		System.out.println(lengthOfLongestSubstring("abbbbba"));
+		System.out.println(longestSubstring("abbbbba"));
+	}
+	
+	public static int longestSubstring(String s) {
+		int i =0, j =0, max = 0;
+        Set<Character> set = new HashSet<Character>();
+        while (j < s.length()) {
+            char c = s.charAt(j);
+            if (set.add(c)) {
+                j++;
+                max = Math.max(max, set.size());
+            } else {
+                set.remove(s.charAt(i++));
+            }
+        }        
+        return max;
 	}
 	
 	public static int lengthOfLongestSubstring(String s) {

@@ -18,7 +18,7 @@ public class GenerateReadme {
 		sb.append("<h2>LeetCode</h2><table><tr><th>No.</th>  <th>Title</th>  <th>Solution</th></tr>");
 
 		for (File fl : list) {
-			String text = file.getName();
+			String text = fl.getName();
 			String num = "";
 			try {
 			num = text.substring(text.indexOf('b'), text.indexOf('_'));

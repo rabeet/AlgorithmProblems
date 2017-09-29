@@ -21,7 +21,7 @@ public class GenerateReadme {
 			String text = fl.getName();
 			String num = "";
 			try {
-			num = text.substring(text.indexOf('b'+1), text.indexOf('_'));
+			num = text.substring(text.indexOf('b')+1, text.indexOf('_'));
 			} catch (Exception e) {
 				num = "";
 			}

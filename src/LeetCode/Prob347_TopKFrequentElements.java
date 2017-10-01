@@ -3,12 +3,16 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Objects;
 import java.util.TreeMap;
 
 public class Prob347_TopKFrequentElements {
 	
 	public static void main(String[] args) {
 		System.out.println(topKFrequent(new int[]{1,1,2,3,3,3}, 3));
+		Object obj = new Object();
+		System.out.println(obj.hashCode());
+		Objects.hashCode(obj);
 	}
 	
 	public static List<Integer> topKFrequent(int[] nums, int k) {

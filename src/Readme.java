@@ -15,7 +15,9 @@ public class Readme {
 		File[] list = file.listFiles();
 		File readme = new File("Readme.md");
 		StringBuilder sb = new StringBuilder();
-		sb.append("<h2>Rabeet's LeetCode solutions</h2><center><table><tr><th>No.</th>  <th>Title</th>  <th>Solution</th></tr>");
+		sb.append("<h2>Rabeet's LeetCode solutions</h2>"
+				+ "<h3>Total solved: " + list.length + "</h3>"
+				+ "<center><table id =\"leet\"><tr><th>No.</th>  <th>Title</th>  <th>Solution</th></tr>");
 
 		for (File fl : list) {
 			String text = fl.getName();
@@ -42,7 +44,7 @@ public class Readme {
 		FileWriter writer = new FileWriter(readme, false);
 		writer.write(sb.toString());
 	    writer.close();
-		
+		System.out.println("Done!");
 	}
 
 	private static String format(String text) {

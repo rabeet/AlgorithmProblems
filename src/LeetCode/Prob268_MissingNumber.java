@@ -1,6 +1,18 @@
 package LeetCode;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 public class Prob268_MissingNumber {
+	
+	public static void main(String[] args) {
+		int i = -2;
+		i -= -5;
+		System.out.println(2^0);
+		
+		Map<Integer, List<Integer>> map = new HashMap();
+	}
 	public int missingNumber(int[] nums) {
 		if (nums == null)
 			return 0;

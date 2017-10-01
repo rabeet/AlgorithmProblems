@@ -15,7 +15,7 @@ public class GenerateReadme {
 		File[] list = file.listFiles();
 		File readme = new File("Readme.md");
 		StringBuilder sb = new StringBuilder();
-		sb.append("<h2>LeetCode</h2><table><tr><th>No.</th>  <th>Title</th>  <th>Solution</th></tr>");
+		sb.append("<h2>Rabeet's LeetCode solutions</h2><center><table><tr><th>No.</th>  <th>Title</th>  <th>Solution</th></tr>");
 
 		for (File fl : list) {
 			String text = fl.getName();
@@ -37,7 +37,7 @@ public class GenerateReadme {
 
 		}
 
-		sb.append("</table>");
+		sb.append("</table></center>");
 		
 		FileWriter writer = new FileWriter(readme, false);
 		writer.write(sb.toString());

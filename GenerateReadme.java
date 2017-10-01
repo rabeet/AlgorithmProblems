@@ -25,11 +25,12 @@ public class GenerateReadme {
 			} catch (Exception e) {
 				num = "";
 			}
-			String title = text.substring(text.indexOf('_') + 1);
+			String title = text.substring(text.indexOf('_') + 1, text.indexOf('.'));
+			title = format(title);
 			String solution = num.equals("344") ? "CPP" : "Java";
 
 			sb.append("<tr>");
-			sb.append("<th>" + num + "</th>");
+			sb.append("<th><a href=\"src/LeetCode/" +text+ "\">" + num + "</a></th>");
 			sb.append("<th>" + title + "</th>");
 			sb.append("<th>" + solution + "</th>");
 			sb.append("</tr>");

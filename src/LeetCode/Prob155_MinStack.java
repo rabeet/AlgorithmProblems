@@ -1,5 +1,7 @@
 package LeetCode;
 
+import java.util.ArrayDeque;
+import java.util.Queue;
 import java.util.Stack;
 
 public class Prob155_MinStack {
@@ -11,6 +13,7 @@ public class Prob155_MinStack {
 		obj.push(214);
 		System.out.println(obj.getMin());
 		System.out.println(obj.top());
+		Queue<Integer> q = new ArrayDeque<>();	
 	}
 }
 

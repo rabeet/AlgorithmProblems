@@ -1,7 +1,7 @@
 import java.io.File;
 import java.io.FileWriter;
 
-public class GenerateReadme {
+public class Readme {
 
 	/*
 	 * Readme generator to make it look goood!

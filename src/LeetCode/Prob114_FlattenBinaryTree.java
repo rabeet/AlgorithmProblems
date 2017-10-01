@@ -2,7 +2,7 @@ package LeetCode;
 
 import java.util.Stack;
 
-public class Pro114_FlattenBinaryTree {
+public class Prob114_FlattenBinaryTree {
 
 	public void flatten(TreeNode root) {
 		if (root == null)

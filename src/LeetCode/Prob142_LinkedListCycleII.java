@@ -8,6 +8,10 @@ public class Prob142_LinkedListCycleII {
 		node.next.next = new ListNode(3);
 		node.next.next.next = node;
 		System.out.println(detectCycle(node));
+		boolean f = true;
+		Object d = null;
+		Object c = new Object();
+		System.out.println(d == c);
 	}
 
 	/*

@@ -7,15 +7,56 @@ public class Prob61_RotateList {
 		ListNode l = new ListNode(1);
 		l.next = new ListNode(2);
 		l.next.next = new ListNode(3);
-		l.next.next.next = new ListNode(4);
 		Prob61_RotateList pr = new Prob61_RotateList();
-		ListNode r = pr.rotateRight(l, 2);
-		System.out.println(r);
+		ListNode r2 = pr.rotateRight(l, 6);
+		System.out.println(r2);
 	}
 
 	ListNode newh = null;
-
+	
+	/*
+	 * 4 phase approach:
+	 * 1. FIND SIZE
+	 * 2. CONNECT THE TAIL TO THE START
+	 * 3. GET THE RETURN NODE
+	 * 4. PERFORM THE SPLIT AT size - k%size
+	 * 
+	 */
 	public ListNode rotateRight(ListNode head, int k) {
+		if (head == null || k == 0 || head.next == null) return head;
+		ListNode temp = head;
+		int track = 0, size = 1;
+		ListNode ans = null;
+		// FIND SIZE
+		while (temp.next != null){
+			temp = temp.next;
+			size++;
+		}
+		
+		// CONNECT THE TAIL TO THE START
+		k = size - k%size;
+		temp.next = head;
+		temp = head;
+		
+		// GET THE RETURN NODE
+		while (track < k) {
+			temp = temp.next;
+			track++;
+		}
+		ans = temp;
+		
+		// PERFORM THE SPLIT AT size - k%size
+		while (true) {
+			if (k == 1)
+				break;
+			head = head.next;
+			k--;
+		}
+		head.next = null;
+		return ans;
+	}
+
+	public ListNode rotateRightFlawed(ListNode head, int k) {
 		if (head == null || head.next == null)
 			return head;
 		int size = findLength(head);
@@ -27,15 +68,23 @@ public class Prob61_RotateList {
 		
 		reverse(head, k);
 		head = newh;
-		ListNode ans = head;
+		ListNode ans = head, temp = ans;
 //		// reverse the end elements
-		int t = 1;
+		int t = 0;
 		while (t < k) {
+			if (t == k-2) temp = head;
 			head = head.next;
 			t++;
 		}
 		reverse(head, k);
-		head.next = newh;
+		t = 0;
+		while (temp != null) {
+			
+			if (t >= k-1) break;
+			t++;
+			temp = temp.next;
+		}
+		temp.next = newh;
 		return ans;
 	}
 

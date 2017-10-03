@@ -1,9 +1,14 @@
 package LeetCode;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.Stack;
 
-public class Prob61_RotateList {
-
+interface i {
+	int i = 2;
+}
+public class Prob61_RotateList implements Cloneable {
+	
 	public static void main(String[] args) {
-		
 		ListNode l = new ListNode(1);
 		l.next = new ListNode(2);
 		l.next.next = new ListNode(3);

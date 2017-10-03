@@ -16,7 +16,7 @@ public class Readme {
 		File readme = new File("Readme.md");
 		StringBuilder sb = new StringBuilder();
 		sb.append("<h2>Rabeet's LeetCode solutions</h2>"
-				+ "<h3>Total solved: " + list.length + "</h3>"
+				+ "<h3>Total solved: " + (list.length-2) + "</h3>"
 				+ "<center><table id =\"leet\"><tr><th>No.</th>  <th>Title</th>  <th>Solution</th></tr>");
 
 		for (File fl : list) {

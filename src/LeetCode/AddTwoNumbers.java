@@ -1,11 +1,19 @@
 package LeetCode;
 import java.math.BigInteger;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 // https://leetcode.com/problems/add-two-numbers/#/description
 
 public class AddTwoNumbers {
 	
 	public static void main(String args[]) {
+		
+		 Map<Character, Integer> map = new HashMap<Character, Integer>();
+		 Collection<Integer> list = map.values();
+		
 		ListNode n1 = new ListNode(2); ListNode n2 = new ListNode(4); ListNode n3 = new ListNode(3);
 		ListNode m1 = new ListNode(5); ListNode m2 = new ListNode(6); ListNode m3 = new ListNode(4);
 		

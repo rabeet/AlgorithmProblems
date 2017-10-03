@@ -8,6 +8,9 @@ import java.util.TreeMap;
 public class Practice {
 
 	public static void main(String[] args) {
+		
+		boolean a = true;
+		
 		SortedMap<Integer, Integer> map = new TreeMap<Integer, Integer>(new Comparator<Integer>(){
 
 			@Override

@@ -33,7 +33,7 @@ public class Readme {
 
 			sb.append("<tr>");
 			sb.append("<th><a href=\"src/LeetCode/" +text+ "\">" + num + "</a></th>");
-			sb.append("<th><a href=\"search?source=hp&q=" +title+ "\">" + title + "</a></th>");
+			sb.append("<th><a href=\"http://www.google.com/search?source=hp&q=" +title+ "\" leetcode>" + title + "</a></th>");
 			sb.append("<th>" + solution + "</th>");
 			sb.append("</tr>");
 

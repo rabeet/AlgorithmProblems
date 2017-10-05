@@ -1,6 +1,7 @@
 package Other;
 
 import java.util.Comparator;
+import java.util.PriorityQueue;
 import java.util.Set;
 import java.util.SortedMap;
 import java.util.TreeMap;
@@ -8,6 +9,13 @@ import java.util.TreeMap;
 public class Practice {
 
 	public static void main(String[] args) {
+		
+		PriorityQueue<Integer> q = new PriorityQueue();
+		q.offer(2);
+		q.offer(5);
+		q.offer(1);
+		System.out.println(q.poll());
+		Practice p = new Practice();
 		
 		boolean a = true;
 		
@@ -26,7 +34,7 @@ public class Practice {
 		
 		Set<Integer> s = map.keySet();
 		for (Integer i : s) {
-			System.out.println(i);
+//			System.out.println(i);
 		}
 	}
 

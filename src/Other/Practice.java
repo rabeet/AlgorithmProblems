@@ -1,6 +1,8 @@
 package Other;
 
 import java.util.Comparator;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.PriorityQueue;
 import java.util.Set;
 import java.util.SortedMap;
@@ -9,6 +11,9 @@ import java.util.TreeMap;
 public class Practice {
 
 	public static void main(String[] args) {
+		
+		
+		System.out.println(2 >> 1);
 		
 		PriorityQueue<Integer> q = new PriorityQueue();
 		q.offer(2);

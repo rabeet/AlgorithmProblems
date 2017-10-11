@@ -9,13 +9,18 @@ public class BinarySearchInASortedRotatedArray {
 		int[] arr2 = {4,5,6,7,0,1,2};
 		int[] arr3 = {4,5};
 		int[] arr4 = {4};
-		int[] arr5 = {};
-		System.out.println(binarySearchRotated(arr, 3));
-		System.out.println(binarySearchRotated(arr1, 8));
+		int[] arr5 = {5,1,2,3,4};
+		int[] arr6 = {5,1,3};
+		
+		System.out.println(binarySearchRotated(arr, 1));
+		System.out.println(binarySearchRotated(arr1, 10));
 		System.out.println(binarySearchRotated(arr2, 0));
 		System.out.println(binarySearchRotated(arr3, 5));
 		System.out.println(binarySearchRotated(arr4, 4));
-		System.out.println(binarySearchRotated(arr5, 4));
+		System.out.println(binarySearchRotated(arr5, 1));
+		System.out.println(binarySearchRotated(arr6, 5));
+		
+		// 5 1 3
 	}
 	
 	public static int binarySearchRotated(int[] arr, int target) {
@@ -32,17 +37,23 @@ public class BinarySearchInASortedRotatedArray {
 		while (start <= end) {
 			int mid = (start+end)/2;
 			if (arr[mid] == target) return mid;
-			if (arr[start] < arr[mid]) { // rotated to the right
+			if (arr[start] <= arr[mid]) { // rotated to the right
 				if (arr[start] <= target && target < arr[mid]) {
 					end = mid-1;
 				} else {
 					start = mid+1;
 				}
 			} else { // rotated to the left
-				if (arr[start] <= target && target > arr[mid]) {
-					end = mid-1;
+				if (target > arr[mid]) {
+					if (arr[start] <= target) 
+						end = mid-1;
+					else
+						start = mid+1;
 				} else {
-					start = mid+1;
+					if (arr[start] >= target)
+						end = mid-1;
+					else
+						start = mid+1;
 				}
 			}
 		}

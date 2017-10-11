@@ -1,5 +1,7 @@
 package LeetCode;
 
+import Utilities.ListNode;
+
 public class Prob234_LinkedListPalindrome {
 	
 	public static void main (String[] args) {

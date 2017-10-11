@@ -1,5 +1,7 @@
 package LeetCode;
 
+import Utilities.ListNode;
+
 public class Prob142_LinkedListCycleII {
 
 	public static void main(String[] args) {

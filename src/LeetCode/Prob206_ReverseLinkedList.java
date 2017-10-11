@@ -2,6 +2,8 @@ package LeetCode;
 
 import java.util.Stack;
 
+import Utilities.ListNode;
+
 public class Prob206_ReverseLinkedList {
 	public ListNode reverseList(ListNode head) {
 		// Recursive: Working but slow!

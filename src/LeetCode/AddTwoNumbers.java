@@ -5,6 +5,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import Utilities.ListNode;
+
 // https://leetcode.com/problems/add-two-numbers/#/description
 
 public class AddTwoNumbers {

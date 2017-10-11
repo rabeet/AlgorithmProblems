@@ -31,7 +31,7 @@ public class Prob83_RemoveDuplicatesFromSortedList {
 		uniques.next = null;
 		return node;
 	}
-	static class ListNode {
+	private static class ListNode {
 		int val;
 		ListNode next;
 		ListNode(int x) { val = x; }

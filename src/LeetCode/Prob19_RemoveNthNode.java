@@ -1,5 +1,7 @@
 package LeetCode;
 
+import Utilities.ListNode;
+
 public class Prob19_RemoveNthNode {
 	
 	public static ListNode deleteNthToLastNode(ListNode node, int n) {

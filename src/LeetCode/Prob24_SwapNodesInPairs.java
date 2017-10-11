@@ -45,7 +45,7 @@ public class Prob24_SwapNodesInPairs {
 		return copy;
 	}
 	
-	class ListNode {
+	private class ListNode {
 		int val;
 		ListNode next;
 		public ListNode(int val) { this.val = val; }

@@ -1,5 +1,7 @@
 package LeetCode;
 
+import Utilities.ListNode;
+
 public class Prob160_IntersectionOfTwoLinkedLists {
 	
 	public ListNode getIntersectionNode(ListNode headA, ListNode headB) {

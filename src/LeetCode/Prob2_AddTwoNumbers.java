@@ -1,6 +1,8 @@
 package LeetCode;
 import java.math.BigInteger;
 
+import Utilities.ListNode;
+
 // https://leetcode.com/problems/add-two-numbers/#/description
 
 public class Prob2_AddTwoNumbers {
@@ -51,22 +53,4 @@ public class Prob2_AddTwoNumbers {
 		return ans;
 	}
 	
-}
-
-class ListNode {
-	ListNode next;
-	int val;
-	ListNode(int a) {
-		this.val = a;
-	}
-	
-	public String toString() {
-		String s = ""+this.val;
-		ListNode n = this;
-		while (n.next != null) {
-			n = n.next;
-			s += "->"+n.val;
-		}
-		return s;
-	}
 }

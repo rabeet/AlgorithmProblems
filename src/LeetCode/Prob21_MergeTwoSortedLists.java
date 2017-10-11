@@ -52,7 +52,7 @@ public class Prob21_MergeTwoSortedLists {
 		return copy;
 	}
 	
-	static class ListNode {
+	private static class ListNode {
 		ListNode next;
 		int val;
 		public ListNode (int val) { this.val = val;}

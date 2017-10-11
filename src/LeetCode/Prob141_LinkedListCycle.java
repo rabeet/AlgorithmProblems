@@ -1,5 +1,7 @@
 package LeetCode;
 
+import Utilities.ListNode;
+
 public class Prob141_LinkedListCycle {
 
 	public boolean hasCycle(ListNode head) {

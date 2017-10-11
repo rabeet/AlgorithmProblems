@@ -1,5 +1,7 @@
 package LeetCode;
 
+import Utilities.ListNode;
+
 public class Prob445_AddTwoNumbersII {
 	
     static int carry = 0;

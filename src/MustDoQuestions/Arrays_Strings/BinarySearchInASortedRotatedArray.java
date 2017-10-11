@@ -27,11 +27,17 @@ public class BinarySearchInASortedRotatedArray {
 		/*
 		 * is mid element the ans? 
 		 * YES: return mid element
-		 * NO:  is left element smaller?
-		 * 	 YES: is target in the range of mid and left (left exclusive)?
-		 * 			YES:mid = middle of left and mid
-		 * 			NO :mid = middle of right and mid
-		 * 	 NO : mid = middle of right and mid
+		 * NO:  is the array rotated to the right of mid?
+		 * 	 YES: is target in the range of left and mid (mid exclusive)?
+		 * 			YES:end = mid-1
+		 * 			NO :start = mid+1
+		 * 	 NO : is the target bigger than the mid?
+		 * 		YES: is the target less than or equal to left?
+		 * 				YES: end = mid-1
+		 * 				NO: start = mid+1
+		 * 		NO: is the target greater than or equal to the left?
+		 * 				YES: end = mid - 1
+		 * 				NO:  start = mid + 1
 		 */
 		int start = 0, end = arr.length-1;
 		while (start <= end) {

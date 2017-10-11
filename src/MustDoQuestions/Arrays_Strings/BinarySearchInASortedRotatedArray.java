@@ -11,6 +11,7 @@ public class BinarySearchInASortedRotatedArray {
 		int[] arr4 = {4};
 		int[] arr5 = {5,1,2,3,4};
 		int[] arr6 = {5,1,3};
+		int[] arr7 = {5,5,5,5,5,5,5,5,4};
 		
 		System.out.println(binarySearchRotated(arr, 1));
 		System.out.println(binarySearchRotated(arr1, 10));
@@ -19,6 +20,7 @@ public class BinarySearchInASortedRotatedArray {
 		System.out.println(binarySearchRotated(arr4, 4));
 		System.out.println(binarySearchRotated(arr5, 1));
 		System.out.println(binarySearchRotated(arr6, 5));
+		System.out.println(binarySearchRotated(arr7, 4));
 		
 		// 5 1 3
 	}

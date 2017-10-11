@@ -1,10 +1,10 @@
-package MustDoQuestions.Arrays.Strings;
+package MustDoQuestions.Arrays_Strings;
 
 public class FindSubstring {
 
 	public static void main(String[] args) {
-		System.out.println(findSubstring("","s"));
-		System.out.println("".indexOf("g"));
+		System.out.println(findSubstring("bostons","s"));
+		System.out.println("apple".indexOf("g"));
 	}
 	
 	public static int findSubstring(String s, String find) {

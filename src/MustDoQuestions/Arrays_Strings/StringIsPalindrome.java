@@ -1,4 +1,4 @@
-package MustDoQuestions.Arrays.Strings;
+package MustDoQuestions.Arrays_Strings;
 
 public class StringIsPalindrome {
 

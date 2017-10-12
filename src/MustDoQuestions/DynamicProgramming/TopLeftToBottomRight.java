@@ -1,11 +1,8 @@
-package LeetCode;
+package MustDoQuestions.DynamicProgramming;
 
-public class Prob63_UniquePaths {
-	
-	
-	static private int paths = 0;
+public class TopLeftToBottomRight {
+
 	static private final int OBSTACLE = 1;
-
 
 	public static void main(String[] args) {
 
@@ -13,10 +10,10 @@ public class Prob63_UniquePaths {
 		grid[1][1] = OBSTACLE;
 		System.out.println(possiblePathsForRobotDP(grid, grid.length - 1, grid[0].length - 1));
 		System.out.println(possiblePathsForRobotMemoization(grid));
-	
+
 	}
-	
-	//TOP DOWN
+
+	// TOP DOWN
 	public static int possiblePathsForRobotDP(int[][] grid, int r, int c) {
 		if (r == 0 && c == 0)
 			return 1;
@@ -30,9 +27,9 @@ public class Prob63_UniquePaths {
 	// BOTTOM UP
 	public static int possiblePathsForRobotMemoization(int[][] grid) {
 		int[][] cache = populateCache(grid);
-        return cache[cache.length-1][cache[0].length-1];
+		return cache[cache.length - 1][cache[0].length - 1];
 	}
-	
+
 	public static int[][] populateCache(int[][] grid) {
 		int[][] cache = new int[grid.length][grid[0].length];
 		for (int i = 0; i < grid.length; i++) {
@@ -53,4 +50,5 @@ public class Prob63_UniquePaths {
 		}
 		return cache;
 	}
+
 }

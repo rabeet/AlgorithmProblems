@@ -1,5 +1,8 @@
 package MustDoQuestions.DynamicProgramming;
 
+import java.util.Set;
+import java.util.TreeSet;
+
 public class TopLeftToBottomRight {
 
 	static private final int OBSTACLE = 1;
@@ -10,9 +13,38 @@ public class TopLeftToBottomRight {
 		grid[1][1] = OBSTACLE;
 		System.out.println(possiblePathsForRobotDP(grid, grid.length - 1, grid[0].length - 1));
 		System.out.println(possiblePathsForRobotMemoization(grid));
+		TreeSet<Integer> set = new TreeSet();
 
 	}
-
+	
+	// O(1) space
+	public int uniquePathsWithObstacles(int[][] obstacleGrid) {
+        
+        //Empty case
+        if(obstacleGrid.length == 0) return 0;
+        
+        int rows = obstacleGrid.length;
+        int cols = obstacleGrid[0].length;
+        
+        for(int i = 0; i < rows; i++){
+            for(int j = 0; j < cols; j++){
+                if(obstacleGrid[i][j] == 1)
+                    obstacleGrid[i][j] = 0;
+                else if(i == 0 && j == 0)
+                    obstacleGrid[i][j] = 1;
+                else if(i == 0)
+                    obstacleGrid[i][j] = obstacleGrid[i][j - 1] * 1;// For row 0, if there are no paths to left cell, then its 0,else 1
+                else if(j == 0)
+                    obstacleGrid[i][j] = obstacleGrid[i - 1][j] * 1;// For col 0, if there are no paths to upper cell, then its 0,else 1
+                else
+                    obstacleGrid[i][j] = obstacleGrid[i - 1][j] + obstacleGrid[i][j - 1];
+            }
+        }
+        
+        return obstacleGrid[rows - 1][cols - 1];
+        
+    }
+	
 	// TOP DOWN
 	public static int possiblePathsForRobotDP(int[][] grid, int r, int c) {
 		if (r == 0 && c == 0)

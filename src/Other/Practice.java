@@ -1,8 +1,7 @@
 package Other;
 
+import java.util.Calendar;
 import java.util.Comparator;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.PriorityQueue;
 import java.util.Set;
 import java.util.SortedMap;
@@ -12,8 +11,13 @@ public class Practice {
 
 	public static void main(String[] args) {
 		
+		int evennum = 2;
+		System.out.println((evennum & 1) == 0);
 		
-		System.out.println(2 >> 1);
+		Calendar c = Calendar.getInstance();
+		System.out.println(c.getTime());
+		
+		Integer.valueOf(2);
 		
 		PriorityQueue<Integer> q = new PriorityQueue();
 		q.offer(2);

@@ -30,7 +30,7 @@ public class Readme {
 			}
 			String title = text.substring(text.indexOf('_') + 1, text.indexOf('.'));
 			title = format(title);
-			String solution = num.equals("344") ? "CPP" : "Java";
+			String solution = text.contains("java") ? "Java" : text.contains("cpp")? "CPP":"";
 
 			sb.append("<tr>");
 			sb.append("<th><a href=\"src/LeetCode/" +text+ "\">" + num + "</a></th>");

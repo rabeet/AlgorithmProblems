@@ -14,7 +14,9 @@ public class IntermediateOperations {
 		Arrays.asList(new String[] {"A","B","C"}).stream().map(m -> m.toLowerCase()).forEach(e -> System.out.println(e));
 		
 		Arrays.asList(new String[] {"A","B","C"}).stream().map(m -> m.length()).forEach(e -> System.out.println(e));
-		
+
+		// Optional
+		System.out.println(IntStream.of(3,5,9,1,2).filter(e -> e%2==0).max().orElse(0));
 		
 		
 	}

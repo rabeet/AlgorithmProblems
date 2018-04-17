@@ -1,9 +1,6 @@
 package FunctionalProgramming;
 
-import java.io.StringBufferInputStream;
 import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class IntermediateOperations {

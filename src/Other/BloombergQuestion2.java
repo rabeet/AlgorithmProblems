@@ -1,5 +1,8 @@
 package Other;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class BloombergQuestion2 {
 
 	// Example 1
@@ -9,14 +12,12 @@ public class BloombergQuestion2 {
 
 	// Valid job schedule: A, B, C
 
-
 	// Example 2
 
 	// Job A before job B
 	// Job C before job B
 
-	// schedule:    A C B
-
+	// schedule: A C B
 
 	// Example 3
 
@@ -25,12 +26,12 @@ public class BloombergQuestion2 {
 	// Job D before job A, D-A
 
 	// schedule: C D A B
-	
+
 	/*
 	 * WTF is my input?
 	 * 
 	 */
-	
+
 	public static void main(String[] args) {
 		Job a = new Job("A");
 		Job b = new Job("B");
@@ -39,19 +40,37 @@ public class BloombergQuestion2 {
 		a.nextJob = b;
 		c.nextJob = d;
 		d.nextJob = a;
-		System.out.println(schedule(a,b,c,d));
+		Job schedule = schedule(a, b, c, d);
+		System.out.println(schedule);
 	}
-	
-	public static String schedule(Job... jobs) {
-		
-		return null;
+
+	public static Job schedule(Job... jobs) {
+		List<Job> jobList = new ArrayList();
+		for (Job j : jobs) {
+			int ind = jobList.indexOf(j.nextJob);
+			if (ind != -1)
+				jobList.add(ind, j);
+			else
+				jobList.add(0, j);
+		}
+		return jobList.get(0);
 	}
-	
+
 	static class Job {
 		String jobId;
 		Job nextJob;
+
 		public Job(String jobId) {
 			this.jobId = jobId;
+		}
+
+		@Override
+		public String toString() {
+			String ret = jobId + "";
+			if (this.nextJob != null) {
+				ret += " -> " + this.nextJob.toString();
+			}
+			return ret;
 		}
 	}
 

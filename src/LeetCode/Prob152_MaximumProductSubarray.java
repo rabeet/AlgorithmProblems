@@ -5,9 +5,15 @@ public class Prob152_MaximumProductSubarray {
     public static void main(String[] args) {
         Prob152_MaximumProductSubarray p = new Prob152_MaximumProductSubarray();
         System.out.println(p.maxProduct(new int[]{2,5,-1,2}));
+        System.out.println(p.maxProduct(new int[]{2,5,-1,312}));
+        System.out.println(p.maxProduct(new int[]{-2,0,-1}));
+        System.out.println(p.maxProduct(new int[]{-2,-5,-4,2}));
+        System.out.println(p.maxProduct(new int[]{2,51,3,-1,52,-1,3,-2,-5,-4,2}));
     }
 
     public int maxProduct(int[] nums) {
+        // TODO: Single pass, at each iteration maintain max, min, nums[i] and at each iteration result is the bigger of the 3
+        // we have to compare among max * A[i], min * A[i] as well as A[i], since this is product, a negative * negative could be positive.
         return Math.max(maxProduct(nums, true), maxProduct(nums, false));
     }
 
@@ -15,12 +21,6 @@ public class Prob152_MaximumProductSubarray {
         if (nums.length == 1) return nums[0];
         int total_prod = 0, max = Integer.MIN_VALUE, total_pos_prod = 0;
         for (int i = direction? 0:nums.length-1; i < nums.length && direction || i>= 0 && !direction; i=direction?i+1:i-1) {
-            if (nums[i] <= 0) {
-                total_pos_prod = 0;
-            } else {
-                if (total_pos_prod == 0) total_pos_prod = nums[i];
-                else total_pos_prod *= nums[i];
-            }
             if (total_prod == 0) total_prod = nums[i];
             else total_prod *= nums[i];
             max = Math.max(max, Math.max(total_prod, total_pos_prod));
@@ -29,6 +29,8 @@ public class Prob152_MaximumProductSubarray {
     }
 
 /*
+
+ONE SWEEP FROM LEFT TO RIGHT AND ANOTHER FORM RIGHT TO LEFT
 
   2,    3,      -2,         4
  2,2,2 6,6,6   0,-12,6   4,-48,6

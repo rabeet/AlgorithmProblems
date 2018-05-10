@@ -1,8 +1,6 @@
 package CtCi_v6;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class Prob4_7_BuildOrder {
 
@@ -30,19 +28,19 @@ public class Prob4_7_BuildOrder {
         List<Project> order = new ArrayList<>();
         if (projects == null || projects.isEmpty()) return order;
         dependencies.stream().forEach(l -> l.get(1).setDependentOn(l.get(0)));
+        Set<Project> set = new HashSet<>();
         for (Project project : projects) {
-            addIt(order, project);
+            addIt(order, project, set);
         }
         return order;
     }
 
-    private static void addIt(List<Project> order, Project project) {
-        if (project.getDependentOn() == null) {
-            order.add(project);
+    private static void addIt(List<Project> order, Project project, Set<Project> set) {
+        if (project == null)
             return;
-        }
-        addIt(order, project.getDependentOn());
-        order.add(project);
+        addIt(order, project.getDependentOn(), set);
+        if (set.add(project))
+            order.add(project);
     }
 
     public static List<Project> buildOrder(List<Project> projects, List<List<Project>> dependencies) {

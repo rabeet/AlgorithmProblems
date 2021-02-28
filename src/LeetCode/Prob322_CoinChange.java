@@ -1,15 +1,46 @@
 package LeetCode;
 
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class Prob322_CoinChange {
 
     public static void main(String[] args) {
         Prob322_CoinChange p = new Prob322_CoinChange();
-        System.out.println(p.coinChangeRecursive(new int[]{1,2,5}, 11));
-        System.out.println(p.coinChangePureRecursive(new int[]{1,2,5}, 11));
-        System.out.println(p.coinChangeDynamic(new int[]{1,2,5}, 11));
-        System.out.println(p.coinChangeDynamicBottomUp(new int[]{1,2,5}, 11));
+        long time = System.currentTimeMillis();
+        int amount = 50;
+        int[] coins = {1, 2, 5};
+
+        System.out.println(p.coinChangeRecursive(coins, amount) + " " + (System.currentTimeMillis()-time)); // TLE
+        time = System.currentTimeMillis();
+        System.out.println(p.coinChangePureRecursive(coins, amount) + " " + (System.currentTimeMillis()-time)); // TLE
+        time = System.currentTimeMillis();
+        System.out.println(p.coinChangeDynamic(coins, amount) + " " + (System.currentTimeMillis()-time));
+        time = System.currentTimeMillis();
+        System.out.println(p.coinChangeDynamicBottomUp(coins, amount) + " " + (System.currentTimeMillis()-time));
+        time = System.currentTimeMillis();
+        System.out.println(p.coinChangeTopDown(coins, amount) + " " + (System.currentTimeMillis()-time));
+    }
+
+    public int coinChangeTopDown(int[] coins, int amount) {
+
+        Queue<int[]> q = new LinkedList<>();
+        var set = new HashSet<Integer>();
+        q.offer(new int[]{amount,0});
+        while (!q.isEmpty()) {
+            var poll = q.poll();
+            int amnt = poll[0], tries = poll[1];
+            if (amnt == 0) return tries;
+            for (int coin : coins) {
+                if (amnt >= coin && !set.contains(amnt-coin)) {
+                    q.offer(new int[] {amnt-coin, tries + 1});
+                    set.add(amnt-coin);
+                }
+            }
+        }
+        return -1;
     }
 
     // remainder, number of tries to get to remainder will be the memoization table
@@ -57,7 +88,6 @@ public class Prob322_CoinChange {
                 }
             }
         }
-        System.out.println(Arrays.toString(rem));
         return rem[amount] == amount+1 ? -1 : rem[amount];
     }
 

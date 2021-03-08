@@ -3,7 +3,7 @@ package MustDoQuestions.Arrays_Strings;
 public class FindSubstring {
 
 	public static void main(String[] args) {
-		System.out.println(findSubstring("bostons","s"));
+		System.out.println(findSubstring("bostons","to"));
 		System.out.println("apple".indexOf("g"));
 	}
 	

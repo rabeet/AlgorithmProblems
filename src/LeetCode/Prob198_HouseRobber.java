@@ -4,7 +4,7 @@ public class Prob198_HouseRobber {
 	
 	
 	public static void main (String[] args) {
-		System.out.println(rob(new int[]{}));
+		System.out.println(rob(new int[]{1,2,3,4,5}));
 	}
 	
 	public static int rob(int[] nums) {

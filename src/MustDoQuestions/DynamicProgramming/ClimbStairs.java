@@ -1,10 +1,29 @@
 package MustDoQuestions.DynamicProgramming;
 
+import java.util.Queue;
+
 public class ClimbStairs {
 
 	public static void main(String[] args) {
 		// given you can climb 1,2 or x stairs in one step, how many ways of reaching the top?
-		System.out.println(climb(4,4));
+		System.out.println(climb(20,4));
+		System.out.println(climbDPBottomUp(20,4));
+	}
+
+	public static int climbDPBottomUp(int stairs, int step) {
+		int dp[] = new int[stairs+1];
+		int n = dp.length;
+		dp[0] = 1;
+		for (int i = 1; i < n; i++) {
+			if (i == 1 || i == 2) {
+				dp[i] = i;
+				continue;
+			}
+			for (int j = 1; j <= step && j <= i; j++) {
+				dp[i]+= dp[i-j];
+			}
+		}
+		return dp[stairs];
 	}
 	
 	/*
